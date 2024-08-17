@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "name": "مسح سيارة صغيرة",
+        "price": 10,
+        "imageUrl": "https://github.com/etosson/massha/tree/main/app_desing_0.jpg",
+        "details": "تنظيف سريع ومميز للسيارات باستخدام أدوات أمنة على جسم السيارة "
+    },
+    
+    {
+        "id": 2,
+        "name": "مسح سيارة كبيرة",
+        "price": 15,
+        "imageUrl": "https://github.com/etosson/massha/tree/main/app_desing_0.jpg",
+        "details": "تنظيف سريع ومميز للسيارات باستخدام أدوات أمنة على جسم السيارة "
+    }
+]

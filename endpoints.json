@@ -1,0 +1,102 @@
+{
+    "endpoints": [
+     
+      {
+        "method": "GET",
+        "endpoint": "/services",
+        "description": "Get a list of all available services",
+        "request_headers": {"Content-Type": "application/json"},
+        "sample_request": null,
+        "200_response": 
+        [
+            {
+                "id": 1,
+                "name": "مسح سيارة صغيرة",
+                "price": 10,
+                "imageUrl": "https://github.com/etosson/massha/tree/main/app_desing_0.jpg",
+                "details": "تنظيف سريع ومميز للسيارات باستخدام أدوات أمنة على جسم السيارة "
+            },
+            
+            {
+                "id": 2,
+                "name": "مسح سيارة كبيرة",
+                "price": 15,
+                "imageUrl": "https://github.com/etosson/massha/tree/main/app_desing_0.jpg",
+                "details": "تنظيف سريع ومميز للسيارات باستخدام أدوات أمنة على جسم السيارة "
+            }
+        ],
+        "400_response": {"error": "Invalid request format"}
+      },
+
+
+      {"-": "-----------------------------------------------------Bookings------------------------------------------------------------------------------------"},
+
+      {
+        "method": "POST",
+        "endpoint": "/bookings",
+        "description": "Create a new booking. Note: When the paymentMethod is mada/visa the backend should creates the booking and generates a transaction id. The response should contains the URL or a payment token that the app will use to redirect the user to the payment gateway's page where they can enter their Visa details..",
+        "request_headers": {"Content-Type": "application/json","Authorization": "Bearer jwt_token"},
+        "sample_request": {
+          "body": {
+            "userId": 1,
+            "serviceId": 3,
+            "appointmentTime": "2024-08-17T10:00:00Z",
+            "location": "123 Main St, City",
+            "paymentMethod": "mada"
+          }
+        },
+        "201_response": {
+            "bookingId": 1,
+            "userId": 1,
+            "serviceId": 3,
+            "status": "booked",
+            "location": "123 Main St, City",
+            "appointmentTime": "2024-08-17T10:00:00Z",
+            "paymentUrl": "https://paymentgateway.com/checkout?session_id=abc123"
+        },
+        "400_response": {"error": "خطأ في اتمام عملية الدفع"}
+      },
+
+
+
+      {"-": "-----------------------------------------------------TODO ------------------------------------------------------------------------------------"},
+
+      {
+        "method": "GET",
+        "endpoint": "/bookings/{booking_id}",
+        "description": "Get details of a specific booking",
+        "request_headers": {"Content-Type": "application/json","Authorization": "Bearer jwt_token"},
+        "sample_request": "/bookings/1"
+
+      },
+      {
+        "method": "POST",
+        "endpoint": "/bookings/{booking_id}/pay",
+        "description": "Pay un paied booking"
+      },
+      {
+        "method": "POST",
+        "endpoint": "/bookings/{booking_id}/update",
+        "description": "Change a booking schedule or payment method"
+      },
+
+      {"-": "-----------------------------------------------------Users------------------------------------------------------------------------------------"},
+
+      {
+        "method": "POST",
+        "endpoint": "/users/register",
+        "description": "Register a new user"
+      },
+      {
+        "method": "POST",
+        "endpoint": "/users/login",
+        "description": "User login and get authentication token"
+      },
+      {
+        "method": "GET",
+        "endpoint": "/users/{user_id}/bookings",
+        "description": "Get all bookings for a specific user"
+      }
+    ]
+  }
+  
