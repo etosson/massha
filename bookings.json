@@ -6,8 +6,10 @@
         "totalPrice": 10,
         "imageUrl": "https://github.com/etosson/massha/tree/main/app_desing_0.jpg",
         "description":  "مسح سيارة صغيرة",
-        "appointment_time": "2024-08-17T11:00:00Z",
-        "location":"456 Sahafa St, Riyadh City"
+        "appointmentTime": "2024-08-17T11:00:00Z",
+        "location":"456 Sahafa St, Riyadh City",
+        "paymentMethod":"visa",
+        "status": "booked"
     }    
    
 ]
